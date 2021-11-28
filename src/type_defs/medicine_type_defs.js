@@ -14,8 +14,8 @@ const medicineTypeDefs = gql(`
 
     type Mutation {
         updateMedicine(medicine: Medicine): Medicine
-        createMedicine(medicine: Medicien): Medicine
+        createMedicine(medicine: Medicine): Medicine
     }
-`)
+`);
 
 module.exports = medicineTypeDefs;
