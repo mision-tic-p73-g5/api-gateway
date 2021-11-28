@@ -27,7 +27,6 @@ class AuthAPI extends RESTDataSource {
         token = new Object(JSON.parse(JSON.stringify({ refresh: token})));
         return await this.post('/refresh/', token);
     }
-
 }
 
 module.exports = AuthAPI;

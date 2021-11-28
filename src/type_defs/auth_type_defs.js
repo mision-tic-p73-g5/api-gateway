@@ -16,7 +16,7 @@ const authTypeDefs = gql(`
     }
 
     input SignUpInput {
-        identify: String!
+        identification_number: String!
         password: String!
         name:String!
         email: String!
