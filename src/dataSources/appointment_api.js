@@ -13,7 +13,7 @@ class AppointmentAPI extends RESTDataSource {
     }
 
     async appointmentByUser(user) {
-        return await this.get(`/cita/${user}`);
+        return await this.get(`/cita/byuser/${user}`);
     }
 
     async createAppointment(appointment) {

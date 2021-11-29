@@ -1,51 +1,46 @@
 const { gql } = require('apollo-server');
 
-const authTypeDefs = gql(`
+const authTypeDefs = gql `
     type Tokens {
         refresh: String!
         access: String!
     }
-
     type Access {
         access: String!
     }
-
     input CredentialsInput {
-        identify: String!
+        identification_number: String!
         password: String!
     }
-
     input SignUpInput {
         identification_number: String!
         password: String!
-        name:String!
+        name: String!
         email: String!
         mobile: String!
         direction: String!
         city: String!
         role: String!
     }
-
     type UserDetail {
         id: Int!
-        identify: String!
-        name:String!
+        identification_number: String!
+        name: String!
         email: String!
         mobile: String!
         direction: String!
         city: String!
         role: String!
     }
-
     type Mutation {
-        singUpUser(userInput: SignUpInput): Tokens!
-        logIn(credentials: CredentialsInput!): Tokens!
-        refrestoken(refresh: String!): Access!
+        signUpUser(userInput: SignUpInput): Tokens!
+        logIn(credentials: CredentialsInput!): Tokens
+        refreshToken(refresh: String!): Access!
     }
-
     type Query {
         userDetailById(userId: Int!): UserDetail!
     }
-`);
 
-module.authTypeDefs;
+`;
+
+module.exports = authTypeDefs;

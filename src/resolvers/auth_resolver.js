@@ -1,4 +1,4 @@
-const usersResolver = {
+const authResolver = {
     Query: {
         userDetailById: (_, { userId }, { dataSources, userIdToken }) => {
             if (userId === userIdToken) {
@@ -33,4 +33,4 @@ const usersResolver = {
     }
 };
 
-module.exports = usersResolver;
+module.exports = authResolver;
