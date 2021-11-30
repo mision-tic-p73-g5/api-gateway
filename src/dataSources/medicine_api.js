@@ -13,18 +13,18 @@ class MedicineAPI extends RESTDataSource {
         return await this.get(`/medicamento/${id}`);
     }
     
-    async medicineByName(name) {
-        return await this.get(`/medicamento/${name}`);
+    async medicineByName(medicineName) {
+        return await this.get(`/medicamento/byname/${medicineName}`);
     }
 
     async createMedicine(medicine) {
         medicine = new Object(JSON.parse(JSON.stringify(medicine)));
-        return await this.post('/medicamento', medicine);
+        return await this.post(`/medicamento`, medicine);
     }
 
     async updateMedicine(medicine) {
         medicine = new Object(JSON.parse(JSON.stringify(medicine)));
-        return await this.put('/medicamento/update', medicine);
+        return await this.put(`/medicamento/update`, medicine);
     }
 }
 

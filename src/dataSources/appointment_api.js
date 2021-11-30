@@ -18,7 +18,7 @@ class AppointmentAPI extends RESTDataSource {
 
     async createAppointment(appointment) {
         appointment = new Object(JSON.parse(JSON.stringify(appointment)));
-        return await this.post('/cita', appointment);
+        return await this.post(`/cita`, appointment);
     }
 
 }

@@ -1,19 +1,19 @@
 const medicineResolver = {
     Query: {
-        medicineById: async (_, { medicineId }, { dataSources }) => {
-            return await dataSources.medicineAPI.medicineById(medicineId);
+        medicineById: async (_, { id }, { dataSources }) => {
+            return await dataSources.medicineAPI.medicineById(id);
         },
 
         medicineByName: async (_, { medicineName }, { dataSources }) => {
-            return await dataSources.medicineByName(medicineName);
+            return await dataSources.medicineAPI.medicineByName(medicineName);
         },
     },
     Mutation: {
         updateMedicine: async (_, { medicine }, { dataSources }) => {
-            return await dataSources.updateMedicine(medicine);
+            return await dataSources.medicineAPI.updateMedicine(medicine);
         },
         createMedicine: async (_, { medicine }, { dataSources }) => {
-            return await dataSources.createMedicine(medicine);
+            return await dataSources.medicineAPI.createMedicine(medicine);
         }
     }
 };

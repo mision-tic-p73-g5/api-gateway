@@ -20,7 +20,7 @@ const medicineTypeDefs = gql `
     }
     extend type Query {
         medicineById(id: String!): Medicine
-        medicineByName(name: String!): Medicine
+        medicineByName(medicineName: String!): Medicine
     }
     extend type Mutation {
         updateMedicine(medicine: MedicineUpdatedInput): Medicine

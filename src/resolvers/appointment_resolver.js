@@ -1,15 +1,15 @@
 const appointmentResolver = {
     Query: {
-        appointmentById: async (_, { appointmentId }, { dataSources }) => { 
-            return await dataSources.appointmentById(appointmentId);
+        appointmentById: async (_, { id }, { dataSources }) => { 
+            return await dataSources.appointmentAPI.appointmentById(id);
         },
-        appointmentByUser: async (_, { username }, { dataSources }) => {
-            return await dataSources.appointmentByUser(username);
+        appointmentByUser: async (_, { user }, { dataSources }) => {
+            return await dataSources.appointmentAPI.appointmentByUser(user);
         },
     },
     Mutation: {
         createAppointment: async (_, { appointment }, { dataSources }) => {
-            return await dataSources.createAppointment(appointment);
+            return await dataSources.appointmentAPI.createAppointment(appointment);
         }
     }
 };

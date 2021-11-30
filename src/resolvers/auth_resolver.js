@@ -24,11 +24,12 @@ const authResolver = {
         },
 
         logIn: (_, { credentials }, { dataSources }) => {
-            dataSources.authAPI.authRequest(credentials);
+            console.log({credentials});
+            return dataSources.authAPI.authRequest(credentials);
         },
 
         refreshToken: (_, { refresh }, { dataSources }) => {
-            dataSources.authAPI.refreshToken(refresh);
+            return dataSources.authAPI.refreshToken(refresh);
         }
     }
 };
