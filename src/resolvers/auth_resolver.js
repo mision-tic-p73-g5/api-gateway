@@ -1,8 +1,8 @@
 const authResolver = {
     Query: {
-        userDetailById: async (_, { userId }, { dataSources, userIdToken }) => {
+        userDetailById: (_, { userId }, { dataSources, userIdToken }) => {
             if (userId === userIdToken) {
-                return await dataSources.authAPI.getUser(userId);
+                return dataSources.authAPI.getUser(userId);
             }
             return null;
         },
@@ -24,7 +24,6 @@ const authResolver = {
         },
 
         logIn: (_, { credentials }, { dataSources }) => {
-            console.log({credentials});
             return dataSources.authAPI.authRequest(credentials);
         },
 
