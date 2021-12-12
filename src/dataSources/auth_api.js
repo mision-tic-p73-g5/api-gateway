@@ -14,8 +14,8 @@ class AuthAPI extends RESTDataSource {
         return await this.post(`/user/`, user);
     }
 
-    async getUser(id) {
-        return await this.get(`/user/${id}/`);
+    async getUser(userId) {
+        return await this.get(`/user/${userId}/`);
     }
 
     async authRequest(credentials) {
