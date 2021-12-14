@@ -24,7 +24,7 @@ class MedicineAPI extends RESTDataSource {
 
     async updateMedicine(medicine) {
         medicine = new Object(JSON.parse(JSON.stringify(medicine)));
-        return await this.put(`/medicamento/update`, medicine);
+        return await this.post(`/medicamento/update`, medicine);
     }
 }
 
